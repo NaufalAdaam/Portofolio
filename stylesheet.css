@@ -1,0 +1,985 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'poppins', sans-serif;    
+}
+
+body {
+    color: #ededed;
+    background: #081b29;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: #051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #0ef;
+}
+
+/* Home Section */
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(resources/wa1.jpg) no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    padding: 70px 10% 0;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.home-content h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.home-content h3 span{
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.homer-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: all .4s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+}
+
+.homer-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50px cyan, 0 0 100px cyan, 0 0 200px cyan;
+}
+
+/* About Section */
+.about {
+    display: grid;
+    grid-template-columns: repeat(2,1fr); /* Adjusted column sizes for better alignment */
+    align-items: center;
+    gap: 1.5rem;
+}
+.about-img img {
+    padding-bottom: 20%;
+    max-width: 630px;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+}
+.about-text h2{
+    font-size: 60px;
+} 
+.about-text h2 span{
+    color: #0ef;
+}
+.about-text p{
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 4rem;
+}
+
+/* Skill Section */
+/* Skills Section - Updated */
+.skills {
+    padding: 80px 10%;
+}
+
+.sub-title {
+    text-align: center;
+    font-size: 60px;
+    padding-bottom: 70px;
+}
+
+.sub-title span {
+    color: #0ef;
+}
+
+.skills-container {
+    display: flex;
+    gap: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.container1 {
+    flex: 1;
+    padding: 40px;
+}
+
+.heading1 {
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    text-decoration-color: #0ef;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #ededed;
+}
+
+ .Technical-bars .bar {
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .Technical-bars .bar i {
+            font-size: 2rem;
+            width: 40px;
+        }
+
+        .Technical-bars .bar .info {
+            width: 100px;
+        }
+
+        .Technical-bars .bar .info span {
+            font-size: 17px;
+            font-weight: 500;
+            color: #ededed;
+        }
+
+        /* Struktur dasar progress bar */
+        .Technical-bars .bar .progress-line {
+            position: relative;
+            border-radius: 10px;
+            width: 300px;
+            height: 8px;
+            background-color: rgba(255, 255, 255, 0.2);
+            overflow: visible; /* Changed from hidden to visible */
+        }
+
+        /* Span pertama: garis biru yang bergerak */
+        .progress-line .bar-fill {
+            position: absolute;
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #0ef, #00d4ff);
+            width: 0;
+        }
+
+        /* Span kedua: teks persentase */
+        .progress-line .percent-text {
+            position: absolute;
+            top: -25px;
+            opacity: 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #0ef;
+            animation: showPercent 0.5s ease-in-out forwards;
+        }
+
+        /* HTML - 90% */
+        .progress-line.html .bar-fill {
+            animation: fillBar90 2s ease-in-out forwards;
+        }
+        .progress-line.html .percent-text {
+            right: calc(100% - 90%); /* Posisi di atas ujung bar */
+            transform: translateX(50%);
+            animation-delay: 2s;
+        }
+
+        /* CSS - 60% */
+        .progress-line.css .bar-fill {
+            animation: fillBar60 2s ease-in-out forwards;
+        }
+        .progress-line.css .percent-text {
+            right: calc(100% - 60%);
+            transform: translateX(50%);
+            animation-delay: 2s;
+        }
+
+        /* JavaScript - 85% */
+        .progress-line.Javascript .bar-fill {
+            animation: fillBar85 2s ease-in-out forwards;
+        }
+        .progress-line.Javascript .percent-text {
+            right: calc(100% - 85%);
+            transform: translateX(50%);
+            animation-delay: 2s;
+        }
+
+        /* Python - 50% */
+        .progress-line.Python .bar-fill {
+            animation: fillBar50 2s ease-in-out forwards;
+        }
+        .progress-line.Python .percent-text {
+            right: calc(100% - 50%);
+            transform: translateX(50%);
+            animation-delay: 2s;
+        }
+
+        /* React - 75% */
+        .progress-line.React .bar-fill {
+            animation: fillBar75 2s ease-in-out forwards;
+        }
+        .progress-line.React .percent-text {
+            right: calc(100% - 75%);
+            transform: translateX(50%);
+            animation-delay: 2s;
+        }
+
+        /* Keyframes untuk berbagai persentase */
+        @keyframes fillBar90 {
+            from { width: 0; }
+            to { width: 90%; }
+        }
+
+        @keyframes fillBar60 {
+            from { width: 0; }
+            to { width: 60%; }
+        }
+
+        @keyframes fillBar85 {
+            from { width: 0; }
+            to { width: 85%; }
+        }
+
+        @keyframes fillBar50 {
+            from { width: 0; }
+            to { width: 50%; }
+        }
+
+        @keyframes fillBar75 {
+            from { width: 0; }
+            to { width: 75%; }
+        }
+
+        @keyframes showPercent {
+            to { opacity: 1; }
+        }
+
+
+/* Professional Skills - Radial Bars */
+.radial-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.radial-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.radial-bar svg {
+    width: 150px;
+    height: 150px;
+    transform: rotate(-90deg);
+}
+
+.radial-bar .progress-bar {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 10;
+}
+
+.radial-bar .path {
+  fill: none;
+  stroke: #0ef;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 502;
+  stroke-dashoffset: 502;
+}
+
+/* ANIMASI KHUSUS SETIAP PERSEN */
+@keyframes progress1 {
+  to { stroke-dashoffset: 50.2; }  /* 90% */
+}
+@keyframes progress2 {
+  to { stroke-dashoffset: 175.7; } /* 65% */
+}
+@keyframes progress3 {
+  to { stroke-dashoffset: 125.5; } /* 75% */
+}
+@keyframes progress4 {
+  to { stroke-dashoffset: 75.3; }  /* 85% */
+}
+
+/* TERAPKAN ANIMASI */
+.path-1 {
+  animation: progress1 2s ease-in-out forwards;
+}
+.path-2 {
+  animation: progress2 2s ease-in-out forwards;
+}
+.path-3 {
+  animation: progress3 2s ease-in-out forwards;
+}
+.path-4 {
+  animation: progress4 2s ease-in-out forwards;
+}
+
+
+
+/* Percentage Display */
+.percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ededed;
+}
+
+
+/* Skills Animations */
+@keyframes fillBar {
+    from { width: 0; }
+}
+
+/* Skills Responsive Design */
+@media (max-width: 1200px) {
+    .skills-container {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .Technical-bars .bar .progress-line {
+        width: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        padding: 20px;
+    }
+    
+    .Technical-bars .bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .Technical-bars .bar .progress-line {
+        width: 100%;
+    }
+    
+    .radial-bars {
+        grid-template-columns: 1fr;
+    }
+    
+    .Technical-bars .bar .progress-line::after {
+        right: -30px;
+    }
+}
+
+/* Portfolio Section */
+.main-text h2 {
+    font-size: 60px;
+    line-height: 1;
+    text-align: center;
+}
+
+.main-text h2 span {
+    color: #0ef;
+}
+
+.Portofolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(359px, auto));
+    gap: 20px;
+    padding: 0 10%;
+    margin-top: 50px;
+}
+
+.row {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.row img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),#0ef);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+
+.layer h5 {
+    color: #ffff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.layer p {
+    color: #000;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.layer i {
+    color: #ff004f;
+    margin-top: 20px;
+    font-size: 20px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.row:hover img {
+    transform: scale(1.1);
+}
+
+.row:hover .layer {
+    height: 100%;
+}
+
+#project {
+    scroll-margin-top: 100px; /* sesuaikan dengan tinggi navbar kamu */
+}
+
+
+   /* Contact Section */
+        .Contact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 3rem;
+            padding: 80px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
+
+        .Contact-text h2 {
+            font-size: 4rem;
+            line-height: 1;
+            margin-bottom: 1rem;
+            text-transform: capitalize;
+        }
+
+        .Contact-text h2 span {
+            color: #0ef;
+            text-shadow: 0 0 20px #0ef;
+        }
+
+        .Contact-text h4 {
+            margin: 15px 0;
+            color: rgb(228,228,228);
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .Contact-text h1 {
+            color: rgb(177,177,177);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .contact-list {
+            margin: 2rem 0;
+        }
+
+        .contact-list li {
+            margin-bottom: 15px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .contact-list i {
+            color: #0ef;
+            font-size: 1.2rem;
+            width: 25px;
+        }
+
+        .contact-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .contact-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: transparent;
+            border: 2px solid #0ef;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            color: #0ef;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-icons a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #0ef, transparent);
+            transition: 0.5s;
+        }
+
+        .contact-icons a:hover::before {
+            left: 100%;
+        }
+
+        .contact-icons a:hover {
+            background: #0ef;
+            color: #000;
+            box-shadow: 0 0 20px #0ef, 0 0 40px #0ef;
+            transform: translateY(-3px);
+        }
+
+        /* Form Styling */
+        .content-form {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .content-form form input,
+        .content-form form textarea {
+            width: 100%;
+            padding: 18px 20px;
+            background: rgba(85, 85, 87, 0.8);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 400;
+            border: 2px solid transparent;
+            outline: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .content-form form input:focus,
+        .content-form form textarea:focus {
+            border-color: #0ef;
+            box-shadow: 0 0 15px rgba(0, 239, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .content-form form input::placeholder,
+        .content-form form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .content-form textarea {
+            resize: none;
+            height: 150px;
+        }
+
+        /* Animated Submit Button */
+        .send {
+            position: relative;
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, #1e90ff, #00bfff) !important;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            color: #000;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 
+                0 0 20px rgba(0, 239, 255, 0.3),
+                0 8px 25px rgba(0, 0, 0, 0.2);
+            animation: pulseGlow 2s infinite;
+        }
+
+        .send::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .send:hover::before {
+            left: 100%;
+        }
+
+        .send:hover {
+            transform: translateY(-3px);
+            box-shadow: 
+                0 0 30px rgba(0, 239, 255, 0.6),
+                0 0 60px rgba(0, 239, 255, 0.4),
+                0 15px 35px rgba(0, 0, 0, 0.3);
+            animation: submitHover 0.6s ease-in-out;
+        }
+
+        .send:active {
+            transform: translateY(-1px);
+            animation: submitClick 0.2s ease-in-out;
+        }
+
+        /* Keyframe Animations */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 20px rgba(0, 239, 255, 0.3),
+                    0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 
+                    0 0 30px rgba(0, 239, 255, 0.5),
+                    0 0 50px rgba(0, 239, 255, 0.3),
+                    0 8px 25px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes submitHover {
+            0% { transform: translateY(-3px) scale(1); }
+            50% { transform: translateY(-5px) scale(1.05); }
+            100% { transform: translateY(-3px) scale(1); }
+        }
+
+        @keyframes submitClick {
+            0% { transform: translateY(-1px) scale(1); }
+            50% { transform: translateY(0) scale(0.98); }
+            100% { transform: translateY(-1px) scale(1); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Animation delays for staggered effect */
+        .Contact-text {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .content-form {
+            animation: slideInRight 0.8s ease-out 0.2s both;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .Contact {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 40px 5%;
+            }
+            
+            .Contact-text h2 {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+            
+            .content-form {
+                padding: 1.5rem;
+            }
+        }
+
+.last-test p {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: rgb(7,85,91);
+    font-weight: 300;
+}
+
+.top {
+    position: fixed;
+    bottom: 2.3rem;
+    right: 2.1rem;
+    z-index: 100;
+}
+
+.top i {
+    color: #000;
+    background: #0ef;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 0.5rem;
+}
+
+/* Animations */
+@keyframes slideRight {
+    0% { transform: translateX(-100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(100px); opacity: 0; }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes slideTop {
+    0% { transform: translateY(100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+
+@keyframes slideBottom {
+    0% { transform: translateY(-100px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 1; }
+}
+/* ============ RESPONSIVE FIX ============ */
+
+@media (max-width: 992px) {
+  .header {
+    padding: 20px 5%;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .container1 {
+    padding: 20px;
+  }
+
+  .Portofolio-content {
+    grid-template-columns: 1fr;
+    padding: 0 5%;
+  }
+
+  .Contact {
+    grid-template-columns: 1fr;
+    padding: 40px 5%;
+  }
+
+  .Contact-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navbar a {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .home-content h1 {
+    font-size: 36px;
+  }
+
+  .home-content h3 {
+    font-size: 20px;
+  }
+
+  .home-content p {
+    font-size: 16px;
+  }
+
+  .about-text h2 {
+    font-size: 36px;
+  }
+
+  .about-text h4 {
+    font-size: 20px;
+  }
+
+  .about-text p {
+    font-size: 16px;
+  }
+
+  .services-list {
+    grid-template-columns: 1fr;
+  }
+
+  .Technical-bars .bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .Technical-bars .bar .progress-line {
+    width: 100%;
+  }
+
+  .radial-bars {
+    grid-template-columns: 1fr;
+  }
+
+  .main-text h2 {
+    font-size: 36px;
+  }
+
+  .contact-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .content-form form input,
+  .content-form form textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .send {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+}
