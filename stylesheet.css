@@ -57,7 +57,7 @@ body {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(resources/wa1.jpg) no-repeat center center / cover;
+    background: url(resources/wa1.JPG) no-repeat center center / cover;
     display: flex;
     align-items: center;
     padding: 70px 10% 0;
