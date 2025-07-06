@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header class="header">
@@ -228,11 +229,19 @@
     e.preventDefault();
     emailjs.sendForm("service_spdqklq", "template_abzfvnc", this)
       .then(() => {
-        alert("Pesan berhasil dikirim!");
-      }, (error) => {
-        alert("Gagal kirim: " + JSON.stringify(error));
-      });
+  Swal.fire({
+    icon: 'success',
+    title: 'Berhasil!',
+    text: 'Pesan kamu telah dikirim.',
   });
+  document.getElementById("contact-form").reset(); // reset form jika berhasil
+}, (error) => {
+  Swal.fire({
+    icon: 'error',
+    title: 'Oops...',
+    text: 'Gagal mengirim pesan. Coba lagi ya!',
+  });
+});
 </script>
         </div>
 
