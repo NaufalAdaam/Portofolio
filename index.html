@@ -223,26 +223,29 @@
 
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  emailjs.init("35Q8N_G2b-l-yUwk9"); // ganti dengan PUBLIC KEY kamu
+  emailjs.init("35Q8N_G2b-l-yUwk9");
 
   document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
     emailjs.sendForm("service_spdqklq", "template_abzfvnc", this)
       .then(() => {
-  Swal.fire({
-    icon: 'success',
-    title: 'Berhasil!',
-    text: 'Pesan kamu telah dikirim.',
+        Swal.fire({
+          icon: 'success',
+          title: 'Berhasil!',
+          text: 'Pesan kamu telah dikirim.',
+          confirmButtonColor: '#081b29'
+        });
+        this.reset(); // Reset form
+      }, (error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Gagal mengirim pesan. Coba lagi ya!'
+        });
+      });
   });
-  document.getElementById("contact-form").reset(); // reset form jika berhasil
-}, (error) => {
-  Swal.fire({
-    icon: 'error',
-    title: 'Oops...',
-    text: 'Gagal mengirim pesan. Coba lagi ya!',
-  });
-});
 </script>
+
         </div>
 
 </section>
