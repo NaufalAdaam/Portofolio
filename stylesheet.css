@@ -262,7 +262,7 @@ body {
             animation: fillBar90 2s ease-in-out forwards;
         }
         .progress-line.html .percent-text {
-            right: calc(100% - 90%); /* Posisi di atas ujung bar */
+            right: calc(100% - 80%); /* Posisi di atas ujung bar */
             transform: translateX(50%);
             animation-delay: 2s;
         }
@@ -272,7 +272,7 @@ body {
             animation: fillBar60 2s ease-in-out forwards;
         }
         .progress-line.css .percent-text {
-            right: calc(100% - 60%);
+            right: calc(100% - 80%);
             transform: translateX(50%);
             animation-delay: 2s;
         }
@@ -282,7 +282,7 @@ body {
             animation: fillBar85 2s ease-in-out forwards;
         }
         .progress-line.Javascript .percent-text {
-            right: calc(100% - 85%);
+            right: calc(100% - 80%);
             transform: translateX(50%);
             animation-delay: 2s;
         }
@@ -292,7 +292,7 @@ body {
             animation: fillBar50 2s ease-in-out forwards;
         }
         .progress-line.Python .percent-text {
-            right: calc(100% - 50%);
+            right: calc(100% - 75%);
             transform: translateX(50%);
             animation-delay: 2s;
         }
@@ -302,7 +302,7 @@ body {
             animation: fillBar75 2s ease-in-out forwards;
         }
         .progress-line.React .percent-text {
-            right: calc(100% - 75%);
+            right: calc(100% - 50%);
             transform: translateX(50%);
             animation-delay: 2s;
         }
@@ -310,27 +310,27 @@ body {
         /* Keyframes untuk berbagai persentase */
         @keyframes fillBar90 {
             from { width: 0; }
-            to { width: 90%; }
+            to { width: 80%; }
         }
 
         @keyframes fillBar60 {
             from { width: 0; }
-            to { width: 60%; }
+            to { width: 80%; }
         }
 
         @keyframes fillBar85 {
             from { width: 0; }
-            to { width: 85%; }
+            to { width: 80%; }
         }
 
         @keyframes fillBar50 {
             from { width: 0; }
-            to { width: 50%; }
+            to { width: 75%; }
         }
 
         @keyframes fillBar75 {
             from { width: 0; }
-            to { width: 75%; }
+            to { width: 50%; }
         }
 
         @keyframes showPercent {
@@ -376,17 +376,21 @@ body {
 
 /* ANIMASI KHUSUS SETIAP PERSEN */
 @keyframes progress1 {
-  to { stroke-dashoffset: 50.2; }  /* 90% */
+  to { stroke-dashoffset: 100.5; }  /* 80% */
 }
+
 @keyframes progress2 {
-  to { stroke-dashoffset: 175.7; } /* 65% */
+  to { stroke-dashoffset: 100.5; }  /* 80% */
 }
+
 @keyframes progress3 {
-  to { stroke-dashoffset: 125.5; } /* 75% */
+  to { stroke-dashoffset: 50.2; }   /* 90% */
 }
+
 @keyframes progress4 {
-  to { stroke-dashoffset: 75.3; }  /* 85% */
+  to { stroke-dashoffset: 50.2; }   /* 90% */
 }
+
 
 /* TERAPKAN ANIMASI */
 .path-1 {
@@ -650,103 +654,123 @@ body {
         }
 
         /* Form Styling */
-        .content-form {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-        }
+.content-form {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+}
 
-        .content-form form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+.content-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
 
-        .content-form form input,
-        .content-form form textarea {
-            width: 100%;
-            padding: 18px 20px;
-            background: rgba(85, 85, 87, 0.8);
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 400;
-            border: 2px solid transparent;
-            outline: none;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-family: inherit;
-        }
+.content-form form input,
+.content-form form textarea {
+    width: 100%;
+    padding: 18px 20px;
+    background: rgba(85, 85, 87, 0.8);
+    color: #fff !important;
+    font-size: 1rem;
+    font-weight: 400;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-family: inherit;
+}
 
-        .content-form form input:focus,
-        .content-form form textarea:focus {
-            border-color: #0ef;
-            box-shadow: 0 0 15px rgba(0, 239, 255, 0.3);
-            transform: translateY(-2px);
-        }
+/* Fokus = ubah jadi putih */
+.content-form form input:focus,
+.content-form form textarea:focus {
+    background: #fff !important;
+    color: #000 !important;
+    border-color: #0ef;
+    box-shadow: 0 0 15px rgba(0, 239, 255, 0.3);
+    transform: translateY(-2px);
+}
 
-        .content-form form input::placeholder,
-        .content-form form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
+/* Ubah hanya input text/email dan textarea yang sudah diisi */
+.content-form form input[type="text"]:not(:placeholder-shown),
+.content-form form input[type="email"]:not(:placeholder-shown),
+.content-form form textarea:not(:placeholder-shown) {
+    background: #fff !important;
+    color: #000 !important;
+}
 
-        .content-form textarea {
-            resize: none;
-            height: 150px;
-        }
+/* Autofill Chrome/Safari */
+.content-form input:-webkit-autofill,
+.content-form textarea:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #fff inset !important;
+    -webkit-text-fill-color: #000 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
 
-        /* Animated Submit Button */
-        .send {
-            position: relative;
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(45deg, #1e90ff, #00bfff) !important;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            color: #000;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 
-                0 0 20px rgba(0, 239, 255, 0.3),
-                0 8px 25px rgba(0, 0, 0, 0.2);
-            animation: pulseGlow 2s infinite;
-        }
+/* Placeholder */
+.content-form form input::placeholder,
+.content-form form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
 
-        .send::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: 0.5s;
-        }
+.content-form textarea {
+    resize: none;
+    height: 150px;
+}
 
-        .send:hover::before {
-            left: 100%;
-        }
+/* Animated Submit Button */
+.send {
+    position: relative;
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(45deg, #1e90ff, #00bfff) !important;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 20px rgba(0, 239, 255, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.2);
+    animation: pulseGlow 2s infinite;
+}
 
-        .send:hover {
-            transform: translateY(-3px);
-            box-shadow: 
-                0 0 30px rgba(0, 239, 255, 0.6),
-                0 0 60px rgba(0, 239, 255, 0.4),
-                0 15px 35px rgba(0, 0, 0, 0.3);
-            animation: submitHover 0.6s ease-in-out;
-        }
+.send::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: 0.5s;
+}
 
-        .send:active {
-            transform: translateY(-1px);
-            animation: submitClick 0.2s ease-in-out;
-        }
+.send:hover::before {
+    left: 100%;
+}
+
+.send:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 0 30px rgba(0, 239, 255, 0.6),
+        0 0 60px rgba(0, 239, 255, 0.4),
+        0 15px 35px rgba(0, 0, 0, 0.3);
+    animation: submitHover 0.6s ease-in-out;
+}
+
+.send:active {
+    transform: translateY(-1px);
+    animation: submitClick 0.2s ease-in-out;
+}
 
         /* Keyframe Animations */
         @keyframes pulseGlow {
