@@ -229,6 +229,31 @@
   <input type="submit" value="Submit" class="send">
 </form>
 
+<script>
+    // Mobile Menu Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navbar = document.getElementById('navbar');
+    
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navbar.classList.toggle('active');
+    });
+    
+    // Close menu when clicking a nav link
+    document.querySelectorAll('.navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navbar.classList.remove('active');
+        });
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        header.classList.toggle('scrolled', window.scrollY > 0);
+    });
+</script>
+
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
   emailjs.init("35Q8N_G2b-l-yUwk9");
